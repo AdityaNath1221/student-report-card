@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "student.h"
+#include "fileio.h"
 
 int main(){
     int choice;
@@ -40,7 +41,8 @@ int main(){
             //save_report_cards();
         }
         else if( choice == 7){
-            //load_report_cards();
+            int loaded_count = load_from_file(&S);
+            student_count += loaded_count;
         }
         else if(choice == 8 ){
             printf("Closing the program...\n");
